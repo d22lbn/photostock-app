@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+
+  background: radial-gradient(69.82% 103.89% at 31.94% 115.53%, rgba(58, 213, 92, 0.61) 0%, rgba(0, 148, 255, 0) 100%),
+  radial-gradient(105.86% 105.86% at 91.6% -11.67%, rgba(116, 10, 55, 0.78) 0%, rgba(109, 58, 159, 0.18) 100%),
+  radial-gradient(70.12% 70.12% at 6.32% 8.84%, #4467AB 0%, rgba(9, 191, 148, 0.55) 100%), #FFFFFF;
+
+  height: 100vh;
+
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
