@@ -1,29 +1,18 @@
 import React from "react";
 import style from "./Main.module.css"
-import Block from "../blocks/Block";
-import BlockMobile from "../blocks/BlockMobile";
+import {NavLink} from "react-router-dom";
 
-const Main = () => {
-    const blocks = [
-        {id: 0},
-        {id: 1},
-        {id: 2},
-        {id: 3},
-        {id: 4},
-        {id: 5},
-        {id: 6},
-        {id: 7},
-        {id: 8},
-        {id: 9},
-        {id: 10},
-    ]
+import Block from "../../blocks/Block";
+import BlockMobile from "../../blocks/BlockMobile";
 
-    let myBlocks = blocks.map((block) =>
-        <Block id={block.id}/>
+const Main = (props) => {
+
+    let myBlocks = props.state.icons.map((icon) =>
+        <Block id={icon.id} name={icon.name} img={icon.img} cover={false}/>
     );
 
-    let myBlocksMobile = blocks.map((block) =>
-        <BlockMobile id={block.id}/>
+    let myBlocksMobile = props.state.iconsMobile.map((icon) =>
+        <BlockMobile id={icon.id} name={icon.name} img={icon.img} cover={false}/>
     );
 
     return (
@@ -46,7 +35,8 @@ const Main = () => {
                 <div className={style.menu}></div>
             </div>
             <div className={style.text}>
-                <h3>Размещайте и приобретайте красивые фотографии в несколько кликов</h3>
+                <h3>{props.state.title}</h3>
+                <NavLink to={"/search"}>Найти ></NavLink>
             </div>
         </main>
     )

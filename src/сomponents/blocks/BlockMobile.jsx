@@ -1,8 +1,6 @@
 import React from "react";
 import style from "./Block.module.css"
 
-import dog from "../../res/dog.png"
-
 const BlockMobile = (props) => {
     let myGridArea = "";
 
@@ -26,7 +24,9 @@ const BlockMobile = (props) => {
 
     return (
         <div className={style.block} style={{gridArea: myGridArea}}>
-            <img src={dog} alt={""}/>
+            <div className={style.img__wrapper}>
+                <img src={props.img} alt={props.name}/>
+            </div>
         </div>
     )
 }

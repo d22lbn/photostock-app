@@ -15,6 +15,11 @@
   box-shadow: 0 9px 26px 0 rgba(0, 0, 0, 0.19);
   height: 30px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-family: "Istok Web", sans-serif;
+  font-weight: 400;
 }
 .main .desktop {
   width: 700px;
@@ -23,6 +28,7 @@
 }
 .main .desktop .search {
   width: 260px;
+  font-size: 15px;
 }
 .main .desktop .blocks__wrapper {
   padding-top: 30px;
@@ -51,6 +57,7 @@
   width: 100%;
   height: 25px;
   margin-top: 20px;
+  font-size: 12px;
 }
 .main .phone .blocks__wrapper {
   padding-top: 20px;
@@ -79,16 +86,30 @@
   left: 0;
   border-radius: 0 0 30px 30px;
 }
-.main .text h3 {
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
-  color: #fafafa;
+.main .text {
   position: absolute;
   left: calc(37% + 84px);
   top: 450px;
   transform: translate(30px, 30px);
   width: 586px;
+}
+.main .text h3 {
+  width: 100%;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  color: #fafafa;
   line-height: 30px;
 }
+.main .text a {
+  position: absolute;
+  right: -50px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-family: "Istok Web", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: #fafafa;
+  background: rgba(80, 103, 166, 0.9);
+}
 
-/*# sourceMappingURL=Main.module.css.map */
+/*# sourceMappingURL=Search.module.css.map */

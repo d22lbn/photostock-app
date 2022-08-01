@@ -1,11 +1,20 @@
 .block {
   background: white;
   box-shadow: 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
 }
-.block img {
+.block .img__wrapper {
+  position: relative;
+}
+.block .img__wrapper img {
+  position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   object-position: center;
 }
 

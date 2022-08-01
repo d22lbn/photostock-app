@@ -5,7 +5,9 @@ body {
   radial-gradient(105.86% 105.86% at 91.6% -11.67%, rgba(116, 10, 55, 0.78) 0%, rgba(109, 58, 159, 0.18) 100%),
   radial-gradient(70.12% 70.12% at 6.32% 8.84%, #4467AB 0%, rgba(9, 191, 148, 0.55) 100%), #FFFFFF;
 
-  height: 100vh;
+  background-size: cover;
+
+  min-height: 100vh;
 
 }
 

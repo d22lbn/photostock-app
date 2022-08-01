@@ -1,0 +1,17 @@
+.blocks__wrapper {
+  padding: 50px 60px 0 60px;
+  width: 100%;
+  height: calc(100vw - 120px);
+  margin-bottom: 20px;
+}
+.blocks__wrapper .blocks {
+  width: 100%;
+  height: calc(100vw - 120px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+/*# sourceMappingURL=Blocks.module.css.map */
