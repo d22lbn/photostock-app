@@ -53,13 +53,11 @@
       justify-content: space-between;
 
       .prize {
-        width: 40%;
-        height: 40%;
+        height: 35%;
 
         img {
-          width: 100%;
           height: 100%;
-          object-fit: contain;
+          object-fit: cover;
         }
       }
     }
