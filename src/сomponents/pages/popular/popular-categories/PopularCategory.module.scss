@@ -1,0 +1,22 @@
+.popular__category {
+  margin-top: 60px;
+  &:first-child {
+    margin-top: 0;
+  }
+
+  h2 {
+    margin-left: 20px;
+    font-family: Istok Web, serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fafafa;
+    margin-bottom: 20px;
+  }
+  
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+  }
+}

@@ -10,10 +10,16 @@ import carPhoto from "./res/searchPage/car.jpg"
 import seaPhoto from "./res/searchPage/sea.jpg"
 import treePhoto from "./res/searchPage/tree.jpg"
 
+import ava from "./res/lkPage/ava.jpg"
+import prize1 from "./res/lkPage/1.png"
+import prize2 from "./res/lkPage/2.png"
+import prize3 from "./res/lkPage/3.png"
 
-let photos = []
-const getPhotos = () => {
-    for (let i = 0; i < 22; i++) {
+
+const getPhotos = (photoNumber, columnsNumber) => {
+    let photos;
+    let photosArr = []
+    for (let i = 0; i < photoNumber; i++) {
         let photo;
         let rand = Math.round(Math.random() * 3);
         if (rand === 0) {
@@ -41,7 +47,12 @@ const getPhotos = () => {
                 img: treePhoto,
             }
         }
-        photos.push(photo);
+        photosArr.push(photo);
+
+        photos = {
+            columnsNumber: columnsNumber,
+            photosArr: photosArr
+        }
     }
     return photos;
 }
@@ -125,9 +136,71 @@ let state = {
         ]
     },
 
+    PopularPage: {
+        popularCategories: [
+            {
+                title: "Топ 7 новинок",
+                photos: getPhotos(7, 1),
+            },
+            {
+                title: "Топ 7 наиболее скачиваемых",
+                photos: getPhotos(7, 1),
+            },
+        ]
+    },
+
     SearchPage: {
         icon: loupe,
-        photos: getPhotos()
+        photos: getPhotos(22, 4)
+    },
+
+    RatingPage: {
+        title: "Лидеры продаж",
+        peoples: [
+            {
+                id: 0,
+                name: "Глеб Петров",
+                text: "Увлекаюсь фотосъемкой с 12 лет. Побывал в 20 странах, из которых привез свыше 50000 новых интересных кадров!",
+                ava: getPhotos(1, 1),
+                photos: getPhotos(3, 1),
+                rating: 1
+            },
+            {
+                id: 1,
+                name: "Артем Иванов",
+                text: "В 15 лет мне подарили фотоаппарат и понеслось... Любимая категория фотографий - портрет.",
+                ava: getPhotos(1, 1),
+                photos: getPhotos(3, 1),
+                rating: 2
+            },
+            {
+                id: 2,
+                name: "Артем Иванов",
+                text: "В 15 лет мне подарили фотоаппарат и понеслось... Любимая категория фотографий - портрет.",
+                ava: getPhotos(1, 1),
+                photos: getPhotos(3, 1),
+                rating: 3
+            },
+            {
+                id: 3,
+                name: "Артем Иванов",
+                text: "В 15 лет мне подарили фотоаппарат и понеслось... Любимая категория фотографий - портрет.",
+                ava: getPhotos(1, 1),
+                photos: getPhotos(3, 1),
+                rating: 4
+            },
+        ]
+    },
+
+    LkPage: {
+        ava: ava,
+        name: "Максим",
+        surname: "Кузнецов",
+        age: 23,
+        email: "max555@gmail.com",
+        password: "Новый пароль",
+        balance: 14563,
+        prizes: [prize1, prize2, prize3]
     }
 }
 

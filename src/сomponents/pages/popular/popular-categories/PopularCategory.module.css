@@ -1,0 +1,22 @@
+.popular__category {
+  margin-top: 60px;
+}
+.popular__category:first-child {
+  margin-top: 0;
+}
+.popular__category h2 {
+  margin-left: 20px;
+  font-family: Istok Web, serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fafafa;
+  margin-bottom: 20px;
+}
+.popular__category img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*# sourceMappingURL=PopularCategory.module.css.map */

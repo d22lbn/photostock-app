@@ -1,0 +1,17 @@
+.main {
+  padding: 40px 160px 0 160px;
+}
+.main h2 {
+  margin-left: 20px;
+  font-family: Istok Web, serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fafafa;
+  margin-bottom: 20px;
+}
+.main .peoples {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=Rating.module.css.map */

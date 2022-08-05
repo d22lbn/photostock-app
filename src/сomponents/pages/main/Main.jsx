@@ -3,16 +3,14 @@ import style from "./Main.module.css"
 import {NavLink} from "react-router-dom";
 
 import Block from "../../blocks/Block";
-import BlockMobile from "../../blocks/BlockMobile";
 
 const Main = (props) => {
-
     let myBlocks = props.state.icons.map((icon) =>
-        <Block id={icon.id} name={icon.name} img={icon.img} cover={false}/>
+        <Block id={icon.id} name={icon.name} img={icon.img} mainPage={true} columnsCount={4}/>
     );
 
     let myBlocksMobile = props.state.iconsMobile.map((icon) =>
-        <BlockMobile id={icon.id} name={icon.name} img={icon.img} cover={false}/>
+        <Block id={icon.id} name={icon.name} img={icon.img} mainPage={true} columnsCount={2}/>
     );
 
     return (
