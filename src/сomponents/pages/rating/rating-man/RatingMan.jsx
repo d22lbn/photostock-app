@@ -3,11 +3,13 @@ import style from "./RatingMan.module.css"
 import Block from "../../../blocks/Block";
 
 const RatingMan = (props) => {
-    let photos = props.photos.photosArr.map((photo) =>
+    let photos = props.photos.map((photo) =>
         <div className={style.photo}>
-            <img src={photo} alt={""}/>
+            <img src={photo.img} alt={""}/>
         </div>
     )
+
+    console.log(props)
 
     return (
         <div className={style.rating__man}>

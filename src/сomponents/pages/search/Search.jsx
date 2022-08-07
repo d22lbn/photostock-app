@@ -4,7 +4,7 @@ import style from "./Search.module.css"
 import Blocks from "../../blocks/Blocks";
 
 const Search = (props) => {
-    let photos = props.state.photos.photosArr;
+    let photos = props.state.photos;
     let photosArrays = [];
     let photoArray = [];
     for (let i = 0; i < photos.length; i++) {
@@ -19,7 +19,7 @@ const Search = (props) => {
     photosArrays.push(photoArray);
 
     let blocks = photosArrays.map((photoArray) =>
-        <Blocks imgArr={photoArray} columnsCount={props.state.photos.columnsNumber}/>
+        <Blocks imgArr={photoArray} columnsNumber={4}/>
     );
 
     return (

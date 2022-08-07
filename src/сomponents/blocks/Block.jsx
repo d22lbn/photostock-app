@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./Block.module.css"
+import {NavLink} from "react-router-dom";
 
 const Block = (props) => {
     let myGridArea = "";
@@ -14,7 +15,7 @@ const Block = (props) => {
         imgFit = "contain";
     }
 
-    if (props.columnsCount === 4 || props.mainPage && props.columnsCount === 4) {
+    if (props.columnsNumber === 4) {
         switch (props.id % 11) {
             case 0:
                 myGridArea = "1 / 1 / 2 / 2";
@@ -50,7 +51,7 @@ const Block = (props) => {
                 myGridArea = "4 / 3 / 5 / 4";
                 break;
         }
-    } else if (props.columnsCount === 2) {
+    } else if (props.columnsNumber === 2) {
         switch (props.id % 5) {
             case 0:
                 myGridArea = "1 / 1 / 2 / 2";
@@ -68,14 +69,24 @@ const Block = (props) => {
                 myGridArea = "4 / 1 / 5 / 3";
                 break;
         }
+    } else {
+        myGridArea = "auto";
+    }
+
+    let myImg;
+    if (props.withoutReference) {
+        myImg = <img src={props.img} alt={props.name} style={{objectFit: imgFit}}/>
+    } else {
+        myImg =
+            <NavLink to={""} id={props.id} name={props.name}>
+                <img src={props.img} alt={props.name} style={{objectFit: imgFit}}/>
+            </NavLink>
     }
 
     return (
         <div className={style.block} style={{gridArea: myGridArea}}>
             <div className={style.img__wrapper} style={{width: imgWidth, height: imgHeight}}>
-                <a href={""} id={props.id} name={props.name}>
-                    <img src={props.img} alt={props.name} style={{objectFit: imgFit}}/>
-                </a>
+                {myImg}
             </div>
         </div>
     )

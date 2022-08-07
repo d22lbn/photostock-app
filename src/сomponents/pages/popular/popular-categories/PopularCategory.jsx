@@ -6,11 +6,15 @@ import {Navigation} from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import {NavLink} from "react-router-dom";
 
 const PopularCategory = (props) => {
     let slides = props.photos.map((photo) =>
-        <SwiperSlide><img src={photo.img} alt={photo.name}/></SwiperSlide>)
-
+        <SwiperSlide>
+            <NavLink to={""}>
+                <img src={photo.img} alt={photo.name}/>
+            </NavLink>
+        </SwiperSlide>)
 
     return (
         <div className={style.popular__category}>

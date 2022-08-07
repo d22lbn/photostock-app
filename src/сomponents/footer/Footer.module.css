@@ -1,0 +1,22 @@
+.footer {
+  margin-top: 30px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  border: 1px solid red;
+}
+.footer .footer__symbol {
+  margin-right: 5px;
+  line-height: 100%;
+  transform: translateY(35%);
+}
+.footer span {
+  font-family: Istok Web, serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #fafafa;
+  display: flex;
+}
+
+/*# sourceMappingURL=Footer.module.css.map */

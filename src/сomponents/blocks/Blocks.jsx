@@ -5,7 +5,7 @@ import Block from "./Block";
 
 const Blocks = (props) => {
     let myBlocks = props.imgArr.map((photo) =>
-        <Block id={photo.id} name={photo.name} img={photo.img} mainPage={false} columnsCount={props.columnsCount}/>
+        <Block id={photo.id} name={photo.name} img={photo.img} columnsNumber={props.columnsNumber}/>
     );
 
     return (

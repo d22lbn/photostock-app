@@ -10,6 +10,7 @@ import Auction from "./сomponents/pages/auction/Auction";
 import Popular from "./сomponents/pages/popular/Popular";
 import Rating from "./сomponents/pages/rating/Rating";
 import Lk from "./сomponents/pages/lk/Lk";
+import Footer from "./сomponents/footer/Footer";
 
 function App(props) {
     return (
@@ -23,6 +24,7 @@ function App(props) {
                 <Route path={"/auction"} element={<Auction/>}/>
                 <Route path={"/account"} element={<Lk state={props.state.LkPage}/>}/>
             </Routes>
+            <Footer/>
         </div>
     );
 }

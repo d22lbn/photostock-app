@@ -6,11 +6,11 @@ import Block from "../../blocks/Block";
 
 const Main = (props) => {
     let myBlocks = props.state.icons.map((icon) =>
-        <Block id={icon.id} name={icon.name} img={icon.img} mainPage={true} columnsCount={4}/>
+        <Block id={icon.id} img={icon.img} mainPage={true} columnsNumber={4} withoutReference={true}/>
     );
 
     let myBlocksMobile = props.state.iconsMobile.map((icon) =>
-        <Block id={icon.id} name={icon.name} img={icon.img} mainPage={true} columnsCount={2}/>
+        <Block id={icon.id} img={icon.img} mainPage={true} columnsNumber={2} withoutReference={true}/>
     );
 
     return (

@@ -1,6 +1,7 @@
 .main {
   display: flex;
   justify-content: center;
+  border: 1px solid red;
 }
 .main .loader {
   display: flex;

@@ -16,9 +16,8 @@ import prize2 from "./res/lkPage/2.png"
 import prize3 from "./res/lkPage/3.png"
 
 
-const getPhotos = (photoNumber, columnsNumber) => {
-    let photos;
-    let photosArr = []
+const getPhotos = (photoNumber) => {
+    let photos = []
     for (let i = 0; i < photoNumber; i++) {
         let photo;
         let rand = Math.round(Math.random() * 3);
@@ -47,12 +46,7 @@ const getPhotos = (photoNumber, columnsNumber) => {
                 img: treePhoto,
             }
         }
-        photosArr.push(photo);
-
-        photos = {
-            columnsNumber: columnsNumber,
-            photosArr: photosArr
-        }
+        photos.push(photo);
     }
     return photos;
 }
@@ -63,74 +57,60 @@ let state = {
         iconsMobile: [
             {
                 id: 0,
-                name: "space",
                 img: space,
             },
             {
                 id: 1,
-                name: "space",
                 img: space,
             },
             {
                 id: 2,
-                name: "space",
                 img: space,
             },
             {
                 id: 3,
-                name: "space",
                 img: space,
             },
             {
                 id: 4,
-                name: "space",
                 img: space,
             },
         ],
         icons: [
             {
                 id: 0,
-                name: "собака",
                 img: dog,
             },
             {
                 id: 1,
-                name: "дерево",
                 img: tree,
             },
             {
                 id: 2,
-                name: "машина",
                 img: car,
             },
             {
                 id: 3,
-                name: "башня",
                 img: tower,
             },
             {
                 id: 4,
-                name: "машина",
                 img: car,
             },
             {
                 id: 5,
-                name: "собака",
                 img: dog,
             },
             {
                 id: 6,
-                name: "башня",
                 img: tower,
             },
             {
                 id: 7,
-                name: "дерево",
                 img: tree,
             },
             {
                 id: 8,
-                name: "башня",
                 img: tower,
             },
         ]
@@ -140,18 +120,18 @@ let state = {
         popularCategories: [
             {
                 title: "Топ 7 новинок",
-                photos: getPhotos(7, 1),
+                photos: getPhotos(7),
             },
             {
                 title: "Топ 7 наиболее скачиваемых",
-                photos: getPhotos(7, 1),
+                photos: getPhotos(7),
             },
         ]
     },
 
     SearchPage: {
         icon: loupe,
-        photos: getPhotos(22, 4)
+        photos: getPhotos(22)
     },
 
     RatingPage: {
@@ -161,32 +141,32 @@ let state = {
                 id: 0,
                 name: "Глеб Петров",
                 text: "Увлекаюсь фотосъемкой с 12 лет. Побывал в 20 странах, из которых привез свыше 50000 новых интересных кадров!",
-                ava: getPhotos(1, 1),
-                photos: getPhotos(3, 1),
+                ava: ava,
+                photos: getPhotos(3),
                 rating: 1
             },
             {
                 id: 1,
                 name: "Артем Иванов",
                 text: "В 15 лет мне подарили фотоаппарат и понеслось... Любимая категория фотографий - портрет.",
-                ava: getPhotos(1, 1),
-                photos: getPhotos(3, 1),
+                ava: ava,
+                photos: getPhotos(3),
                 rating: 2
             },
             {
                 id: 2,
                 name: "Артем Иванов",
                 text: "В 15 лет мне подарили фотоаппарат и понеслось... Любимая категория фотографий - портрет.",
-                ava: getPhotos(1, 1),
-                photos: getPhotos(3, 1),
+                ava: ava,
+                photos: getPhotos(3),
                 rating: 3
             },
             {
                 id: 3,
                 name: "Артем Иванов",
                 text: "В 15 лет мне подарили фотоаппарат и понеслось... Любимая категория фотографий - портрет.",
-                ava: getPhotos(1, 1),
-                photos: getPhotos(3, 1),
+                ava: ava,
+                photos: getPhotos(3),
                 rating: 4
             },
         ]
@@ -199,8 +179,10 @@ let state = {
         age: 23,
         email: "max555@gmail.com",
         password: "Новый пароль",
-        balance: 14563,
-        prizes: [prize1, prize2, prize3]
+        balance: "1 563 278",
+        prizes: [prize1, prize2, prize3, prize1],
+        published: getPhotos(7),
+        purchased: getPhotos(8)
     }
 }
 
