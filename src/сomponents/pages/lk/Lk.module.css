@@ -71,7 +71,6 @@
 .main .account__photos .account__photos__title {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
 }
 .main .account__photos .account__photos__title h3 {
   margin-left: 80px;
@@ -119,7 +118,7 @@
   border-radius: 4px;
   overflow: hidden;
   filter: drop-shadow(0 16px 32px rgba(17, 37, 62, 0.16)) drop-shadow(6px 0 24px rgba(0, 0, 0, 0.12));
-  margin: 0 10px 20px 10px;
+  margin: 20px 10px 0 10px;
 }
 .main .account__photos .photos a img {
   width: 100%;

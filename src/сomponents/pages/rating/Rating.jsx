@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./Rating.module.css"
 import RatingMan from "./rating-man/RatingMan";
+import Header from "../../header/Header";
+import Footer from "../../footer/Footer";
 
 const Rating = (props) => {
 
@@ -9,12 +11,16 @@ const Rating = (props) => {
     )
 
     return (
-        <main className={style.main}>
-            <h2>{props.state.title}</h2>
-            <div className={style.peoples}>
-                {peoples}
-            </div>
-        </main>
+        <div>
+            <Header/>
+            <main className={style.main}>
+                <h2>{props.state.title}</h2>
+                <div className={style.peoples}>
+                    {peoples}
+                </div>
+            </main>
+            <Footer/>
+        </div>
     )
 }
 

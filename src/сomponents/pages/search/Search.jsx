@@ -2,6 +2,8 @@ import React from "react";
 import style from "./Search.module.css"
 
 import Blocks from "../../blocks/Blocks";
+import Header from "../../header/Header";
+import Footer from "../../footer/Footer";
 
 const Search = (props) => {
     let photos = props.state.photos;
@@ -23,17 +25,21 @@ const Search = (props) => {
     );
 
     return (
-        <main className={style.main}>
-            <form className={style.search}>
-                <input type={"text"} placeholder={"Что найти?"}/>
-                <button type={"submit"}>
-                    <img src={props.state.icon} alt={""}/>
-                </button>
-            </form>
-            <div>
-                {blocks}
-            </div>
-        </main>
+        <div>
+            <Header/>
+            <main className={style.main}>
+                <form className={style.search}>
+                    <input type={"text"} placeholder={"Что найти?"}/>
+                    <button type={"submit"}>
+                        <img src={props.state.icon} alt={""}/>
+                    </button>
+                </form>
+                <div>
+                    {blocks}
+                </div>
+            </main>
+            <Footer/>
+        </div>
     )
 }
 

@@ -3,6 +3,7 @@ import style from "./Main.module.css"
 import {NavLink} from "react-router-dom";
 
 import Block from "../../blocks/Block";
+import Header from "../../header/Header";
 
 const Main = (props) => {
     let myBlocks = props.state.icons.map((icon) =>
@@ -14,29 +15,32 @@ const Main = (props) => {
     );
 
     return (
-        <main className={style.main}>
-            <div className={style.desktop}>
-                <div className={style.search}></div>
-                <div className={style.blocks__wrapper}>
-                    <div className={style.blocks}>
-                        {myBlocks}
+        <div>
+            <Header main={true}/>
+            <main className={style.main}>
+                <div className={style.desktop}>
+                    <div className={style.search}></div>
+                    <div className={style.blocks__wrapper}>
+                        <div className={style.blocks}>
+                            {myBlocks}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className={style.phone}>
-                <div className={style.search}></div>
-                <div className={style.blocks__wrapper}>
-                    <div className={style.blocks}>
-                        {myBlocksMobile}
+                <div className={style.phone}>
+                    <div className={style.search}></div>
+                    <div className={style.blocks__wrapper}>
+                        <div className={style.blocks}>
+                            {myBlocksMobile}
+                        </div>
                     </div>
+                    <div className={style.menu}></div>
                 </div>
-                <div className={style.menu}></div>
-            </div>
-            <div className={style.text}>
-                <h3>{props.state.title}</h3>
-                <NavLink to={"/search"}>Найти ></NavLink>
-            </div>
-        </main>
+                <div className={style.text}>
+                    <h3>{props.state.title}</h3>
+                    <NavLink to={"/search"}>Найти ></NavLink>
+                </div>
+            </main>
+        </div>
     )
 }
 

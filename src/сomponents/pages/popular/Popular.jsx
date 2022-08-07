@@ -2,6 +2,8 @@ import React from "react";
 import style from "./Popular.module.css";
 
 import PopularCategory from "./popular-categories/PopularCategory";
+import Header from "../../header/Header";
+import Footer from "../../footer/Footer";
 
 const Popular = (props) => {
     let categories = props.state.popularCategories.map((category) =>
@@ -9,11 +11,16 @@ const Popular = (props) => {
     );
 
     return (
-        <main className={style.main}>
-            <div className={style.categories}>
-                {categories}
-            </div>
-        </main>
+        <div>
+            <Header/>
+            <main className={style.main}>
+                <div className={style.categories}>
+                    {categories}
+                </div>
+            </main>
+            <Footer/>
+        </div>
+
     )
 }
 

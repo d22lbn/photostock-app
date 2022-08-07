@@ -14,8 +14,8 @@ import Footer from "./сomponents/footer/Footer";
 
 function App(props) {
     return (
-        <div>
-            <Header/>
+        <div className={"wrapper"}>
+            {/*<Header/>*/}
             <Routes>
                 <Route path={"/"} element={<Main state={props.state.MainPage}/>}/>
                 <Route path={"/popular"} element={<Popular state={props.state.PopularPage}/>}/>
@@ -24,7 +24,7 @@ function App(props) {
                 <Route path={"/auction"} element={<Auction/>}/>
                 <Route path={"/account"} element={<Lk state={props.state.LkPage}/>}/>
             </Routes>
-            <Footer/>
+            {/*<Footer/>*/}
         </div>
     );
 }

@@ -1,13 +1,14 @@
 .main {
-  position: relative;
+  position: absolute;
   margin-top: 30px;
+  left: 37vw;
+  top: 10vh;
 
   .desktop, .phone {
     background: rgba(255, 255, 255, 0.63);
     position: absolute;
     border: 1px solid rgba(0, 0, 0, 0.16);
     box-shadow: 4px 8px 19px 0 rgba(0, 0, 0, 0.25);
-    left: 37%;
     padding: 40px;
   }
 

@@ -14,11 +14,11 @@
     font-weight: 400;
 
     font-size: 30px;
-    flex-direction: row;
+    height: auto;
+    justify-content: start;
     position: relative;
     top: 0;
-    justify-content: start;
-    height: auto;
+    flex-direction: row;
 
     span {
       line-height: 100%;
@@ -26,12 +26,22 @@
   }
 
   .logo__main {
+    display: flex;
+    align-items: center;
+
+    font-family: 'Russo One', sans-serif;
+    font-weight: 400;
+
     font-size: 80px;
     height: calc(100vh - 40px);
     justify-content: center;
     position: absolute;
     top: 20px;
     flex-direction: column;
+
+    span {
+      line-height: 100%;
+    }
   }
 
   .space {

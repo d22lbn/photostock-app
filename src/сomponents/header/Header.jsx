@@ -2,10 +2,11 @@ import React from "react";
 import style from "./Header.module.css"
 import {NavLink} from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
+    console.log()
     return (
         <header className={style.header}>
-            <NavLink to={"/"} className={style.logo}>
+            <NavLink to={"/"} className={props.main ? style.logo__main : style.logo}>
                 <span>ф</span>
                 <span>о</span>
                 <span>т</span>
