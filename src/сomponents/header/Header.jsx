@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import style from "./Header.module.css"
 import {NavLink} from "react-router-dom";
+import Modal from "../modal/Modal";
 
 const Header = (props) => {
-    console.log()
+    const [modalActive, setModalActive] = useState(false);
     return (
         <header className={style.header}>
             <NavLink to={"/"} className={props.main ? style.logo__main : style.logo}>
@@ -22,8 +23,17 @@ const Header = (props) => {
                 <NavLink to={"/search"}>Найти</NavLink>
                 <NavLink to={"/rating"}>Рейтинг</NavLink>
                 <NavLink to={"/auction"}>Аукцион</NavLink>
-                <NavLink to={"/enter"}>Войти</NavLink>
+                <button onClick={() => setModalActive(true)}>Войти</button>
             </nav>
+
+            <Modal
+                active={modalActive}
+                setActive={setModalActive}
+                title={"Авторизация"}
+                fields={['почта', 'пароль']}
+                firstLink={'регистрация'}
+                secondLink={'забыли пароль'}
+            />
         </header>
     )
 }

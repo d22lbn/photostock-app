@@ -1,0 +1,136 @@
+.modal__wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal {
+    width: 400px;
+    background: rgba(80, 103, 166, 1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 40px 35px 40px;
+    position: relative;
+    transform: scale(0.5);
+    transition: 0.4s all ease;
+
+    &.active {
+      transform: scale(1);
+    }
+
+    h2 {
+      font-family: 'Istok Web', serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      color: #fafafa;
+    }
+
+    .modal__main {
+      margin-top: 30px;
+
+      .modal__inputs {
+
+        input {
+          background: rgba(255, 255, 255, 0.5);
+          border-radius: 12px;
+          width: 100%;
+          border: none;
+          margin-top: 20px;
+
+          font-family: Istok Web, serif;
+          font-size: 19px;
+          font-weight: 700;
+
+          padding: 10px 10px 10px 20px;
+
+          color: #fafafa;
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+          }
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .modal__links {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+
+        button {
+          font-family: Istok Web, serif;
+          font-size: 14px;
+          font-weight: 400;
+          color: rgba(255, 255, 255, 0.7);
+          border: none;
+          background: none;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .enter {
+      background: rgba(0, 204, 118, 0.63);
+      border-radius: 59px;
+      border: none;
+      font-family: Istok Web, serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: #fafafa;
+      padding: 12px 55px;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+
+    .exit {
+      position: absolute;
+      background: none;
+      border: none;
+      cursor: pointer;
+      top: 15px;
+      right: 15px;
+      width: 15px;
+      height: 15px;
+
+      &:before, &:after {
+        content: '';
+        width: calc(100% * 1.4142);
+        height: 2px;
+        background: #fafafa;
+        position: absolute;
+        top: 49.5%;
+        left: 49.5%;
+      }
+
+      &:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+}
+

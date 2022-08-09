@@ -43,20 +43,23 @@
 }
 .header .nav {
   display: flex;
+}
+.header .nav a, .header .nav button {
   font-family: "Istok Web", sans-serif;
   font-weight: 700;
   font-size: 17px;
-  color: #fafafa;
-}
-.header .nav a {
   margin-left: 70px;
   padding: 10px 20px;
   border-radius: 100px;
+  color: #fafafa;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
-.header .nav a:first-child {
+.header .nav a:first-child, .header .nav button:first-child {
   margin-left: 0;
 }
-.header .nav a:hover {
+.header .nav a:hover, .header .nav button:hover {
   background: rgba(84, 184, 178, 0.54);
 }
 
