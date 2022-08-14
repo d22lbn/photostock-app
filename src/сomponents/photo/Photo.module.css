@@ -64,7 +64,7 @@
   background: none;
   border: none;
 }
-.photo__wrapper .photo .information .information__inner div .likes__wrapper img {
+.photo__wrapper .photo .information .information__inner div .likes__wrapper button img {
   height: 30px;
   cursor: pointer;
 }
