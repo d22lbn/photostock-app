@@ -10,7 +10,7 @@ import {
     updateAgeActionCreator, updateEmailActionCreator,
     updateNameActionCreator, updatePasswordActionCreator,
     updateSurnameActionCreator
-} from "../../../redux/state";
+} from "../../../redux/lk-reducer";
 
 const Lk = (props) => {
     let prizes = props.state.prizes.map((prize) =>

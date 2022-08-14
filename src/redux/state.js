@@ -20,23 +20,6 @@ import likeActive from "./res/photoPage/likeActive.png"
 import lkReducer from "./lk-reducer";
 import photoReducer from "./photo-reducer";
 
-const CHANGED_NAME = 'CHANGED-NAME';
-const UPDATE_NAME = 'UPDATE-NAME'
-
-const CHANGED_SURNAME = 'CHANGED-SURNAME'
-const UPDATE_SURNAME = 'UPDATE-SURNAME'
-
-const CHANGED_AGE = 'CHANGED-AGE'
-const UPDATE_AGE = 'UPDATE-AGE'
-
-const CHANGED_EMAIL = 'CHANGED-EMAIL'
-const UPDATE_EMAIL = 'UPDATE-EMAIL'
-
-const CHANGED_PASSWORD = 'CHANGED-PASSWORD'
-const UPDATE_PASSWORD = 'UPDATE-PASSWORD'
-
-const PUT_LIKE = 'PUT-LIKE'
-
 let getPhotos = (photoNumber) => {
     let photos = []
     for (let i = 0; i < photoNumber; i++) {
@@ -149,7 +132,7 @@ let store = {
             age: 23,
             email: "max555@gmail.com",
             password: "Новый пароль",
-            balance: "1 563 278",
+            balance: "2 000 000",
             prizes: [prize1, prize2, prize3, prize1],
             published: getPhotos(7),
             purchased: getPhotos(8),
@@ -187,23 +170,6 @@ let store = {
         this._callSubscriber(this._state);
     }
 }
-
-export const changeNameActionCreator = () => ({type: CHANGED_NAME})
-export const updateNameActionCreator = (text) => ({type: UPDATE_NAME, newName: text})
-
-export const changeSurnameActionCreator = () => ({type: CHANGED_SURNAME})
-export const updateSurnameActionCreator = (text) => ({type: UPDATE_SURNAME, newSurname: text})
-
-export const changeAgeActionCreator = () => ({type: CHANGED_AGE})
-export const updateAgeActionCreator = (text) => ({type: UPDATE_AGE, newAge: text})
-
-export const changeEmailActionCreator = () => ({type: CHANGED_EMAIL})
-export const updateEmailActionCreator = (text) => ({type: UPDATE_EMAIL, newEmail: text})
-
-export const changePasswordActionCreator = () => ({type: CHANGED_PASSWORD})
-export const updatePasswordActionCreator = (text) => ({type: UPDATE_PASSWORD, newPassword: text})
-
-export const putLikeActionCreator = () => ({type: PUT_LIKE})
 
 export default store;
 window.store = store;

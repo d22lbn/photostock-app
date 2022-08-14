@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Photo.module.css"
 import {NavLink} from "react-router-dom";
-import {putLikeActionCreator} from "../../redux/state";
+import {putLikeActionCreator} from "../../redux/photo-reducer";
 
 const Photo = (props) => {
     let putLike = () => {

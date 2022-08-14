@@ -75,4 +75,19 @@ const lkReducer = (state, action) => {
     }
 }
 
+export const changeNameActionCreator = () => ({type: CHANGED_NAME})
+export const updateNameActionCreator = (text) => ({type: UPDATE_NAME, newName: text})
+
+export const changeSurnameActionCreator = () => ({type: CHANGED_SURNAME})
+export const updateSurnameActionCreator = (text) => ({type: UPDATE_SURNAME, newSurname: text})
+
+export const changeAgeActionCreator = () => ({type: CHANGED_AGE})
+export const updateAgeActionCreator = (text) => ({type: UPDATE_AGE, newAge: text})
+
+export const changeEmailActionCreator = () => ({type: CHANGED_EMAIL})
+export const updateEmailActionCreator = (text) => ({type: UPDATE_EMAIL, newEmail: text})
+
+export const changePasswordActionCreator = () => ({type: CHANGED_PASSWORD})
+export const updatePasswordActionCreator = (text) => ({type: UPDATE_PASSWORD, newPassword: text})
+
 export default lkReducer;

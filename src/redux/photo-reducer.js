@@ -19,4 +19,6 @@ const photoReducer = (state, action) => {
     }
 }
 
+export const putLikeActionCreator = () => ({type: PUT_LIKE})
+
 export default photoReducer;
