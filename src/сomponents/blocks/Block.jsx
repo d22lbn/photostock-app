@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Block.module.css"
 import {NavLink} from "react-router-dom";
+import Photo from "../photo/Photo";
 
 const Block = (props) => {
     let myGridArea = "";

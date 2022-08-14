@@ -24,6 +24,26 @@ const Lk = (props) => {
         </NavLink>
     )
 
+
+    let newName = React.createRef();
+    let changedName = () => {
+        props.changedName();
+    }
+    let onNameChange = () => {
+        let text = newName.current.value;
+        props.updateName(text);
+    }
+
+
+    let newSurname = React.createRef();
+    let changedSurname = () => {
+        props.changedSurname();
+    }
+    let onSurnameChange = () => {
+        let text = newSurname.current.value;
+        props.updateSurname(text);
+    }
+
     return (
         <div>
             <Header/>
@@ -33,11 +53,28 @@ const Lk = (props) => {
                         <img src={props.state.ava} alt={""}/>
                     </div>
                     <form className={style.information}>
-                        <input type={"text"} placeholder={props.state.name}/>
-                        <input type={"text"} placeholder={props.state.surname}/>
-                        <input type={"text"} placeholder={props.state.age + " года"}/>
-                        <input type={"text"} placeholder={props.state.email}/>
-                        <input type={"text"} placeholder={props.state.password}/>
+                        <div className={style.information__inputs}>
+                            <input type={"text"} placeholder={props.state.name} value={props.state.newName}
+                                   onChange={onNameChange} ref={newName}/>
+                            <input type={"text"} placeholder={props.state.surname} value={props.state.newSurname}
+                                   onChange={onSurnameChange} ref={newSurname}/>
+                            <input type={"text"} placeholder={props.state.age + " года"}/>
+                            <input type={"text"} placeholder={props.state.email}/>
+                            <input type={"text"} placeholder={props.state.password}/>
+                        </div>
+                        <button type={"button"} onClick={() => {changedName(); changedSurname()}} className={style.save}>
+                            <div>
+                                <span>с</span>
+                                <span>о</span>
+                                <span>х</span>
+                                <span>р</span>
+                                <span>а</span>
+                                <span>н</span>
+                                <span>и</span>
+                                <span>т</span>
+                                <span>ь</span>
+                            </div>
+                        </button>
                     </form>
                     <div className={style.prizes}>
                         {prizes}

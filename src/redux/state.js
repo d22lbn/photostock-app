@@ -15,6 +15,9 @@ import prize1 from "./res/lkPage/1.png"
 import prize2 from "./res/lkPage/2.png"
 import prize3 from "./res/lkPage/3.png"
 
+import like from "./res/photoPage/like.png"
+import likeActive from "./res/photoPage/likeActive.png"
+
 
 const getPhotos = (photoNumber) => {
     let photos = []
@@ -182,8 +185,70 @@ let state = {
         balance: "1 563 278",
         prizes: [prize1, prize2, prize3, prize1],
         published: getPhotos(7),
-        purchased: getPhotos(8)
+        purchased: getPhotos(8),
+
+        newName: "",
+        newSurname: "",
+    },
+
+    PhotoPage: {
+        img: carPhoto,
+        name: "Машина",
+        description: "Этот удивительный автомобиль был запечатлен в славном городе Сиднее",
+        likes: 236,
+        likeIconActive: like,
+        owner: "Борис",
+        price: 12000
     }
+}
+
+
+export const changedName = () => {
+    let newName = state.LkPage.newName;
+    if (newName.length > 0) {
+        state.LkPage.name = newName;
+        state.LkPage.newName = '';
+    }
+    rerenderEntireTree(state);
+}
+
+export const updateName = (newName) => {
+    state.LkPage.newName = newName;
+    rerenderEntireTree(state);
+}
+
+
+export const changedSurname = () => {
+    let newSurname = state.LkPage.newSurname;
+    if (newSurname.length > 0) {
+        state.LkPage.surname = newSurname;
+        state.LkPage.newSurname = '';
+    }
+    rerenderEntireTree(state);
+}
+
+export const updateSurname = (newSurname) => {
+    state.LkPage.newSurname = newSurname;
+    rerenderEntireTree(state);
+}
+
+
+export const putLike = () => {
+    if (state.PhotoPage.likeIconActive === like) {
+        state.PhotoPage.likeIconActive = likeActive;
+        state.PhotoPage.likes++;
+    } else {
+        state.PhotoPage.likeIconActive = like;
+        state.PhotoPage.likes--;
+    }
+    rerenderEntireTree(state);
+}
+
+
+let rerenderEntireTree = () => {}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 }
 
 export default state;

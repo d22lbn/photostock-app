@@ -29,9 +29,9 @@ const Header = (props) => {
             <Modal
                 active={modalActive}
                 setActive={setModalActive}
-                title={"Авторизация"}
-                fields={['почта', 'пароль']}
-                firstLink={'регистрация'}
+                title={"Регистрация"}
+                fields={['имя', 'фамилия', 'почта', 'пароль']}
+                firstLink={'авторизация'}
                 secondLink={'забыли пароль'}
             />
         </header>

@@ -3,8 +3,7 @@ import style from "./Modal.module.css"
 import {NavLink} from "react-router-dom";
 
 const Modal = (props) => {
-    let fields = props.fields.map((field) =>
-        {
+    let fields = props.fields.map((field) => {
             let type = "text";
             if (field === "почта") {
                 type = "email";
@@ -43,7 +42,8 @@ const Modal = (props) => {
                         <button>{props.secondLink}</button>
                     </div>
                 </div>
-                <NavLink to={"/account"} className={style.enter}>Войти</NavLink> {/* todo засунуть кнопку в тег формы */}
+                <NavLink to={"/account"} className={style.enter}
+                         onClick={() => props.setActive(false)}>Войти</NavLink> {/* todo засунуть кнопку в тег формы */}
             </div>
         </div>
     )

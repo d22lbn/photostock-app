@@ -10,6 +10,8 @@ import Auction from "./сomponents/pages/auction/Auction";
 import Popular from "./сomponents/pages/popular/Popular";
 import Rating from "./сomponents/pages/rating/Rating";
 import Lk from "./сomponents/pages/lk/Lk";
+import Photo from "./сomponents/photo/Photo";
+import {putLike} from "./redux/state";
 
 function App(props) {
     return (
@@ -20,7 +22,11 @@ function App(props) {
                 <Route path={"/search"} element={<Search state={props.state.SearchPage}/>}/>
                 <Route path={"/rating"} element={<Rating state={props.state.RatingPage}/>}/>
                 <Route path={"/auction"} element={<Auction/>}/>
-                <Route path={"/account"} element={<Lk state={props.state.LkPage}/>}/>
+                <Route path={"/account"} element={<Lk state={props.state.LkPage}
+                                                      changedName={props.changedName}
+                                                      updateName={props.updateName}
+                                                      changedSurname={props.changedSurname}
+                                                      updateSurname={props.updateSurname}/>}/>
             </Routes>
         </div>
     );

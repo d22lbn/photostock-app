@@ -1,0 +1,129 @@
+.photo__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.photo__wrapper .photo {
+  width: 70vw;
+  height: 80vh;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(80, 103, 166, 0.7);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.photo__wrapper .photo .photo__img {
+  width: 90%;
+  height: 100%;
+}
+.photo__wrapper .photo .photo__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.photo__wrapper .photo .information {
+  width: 35%;
+  height: 100%;
+  background: rgba(80, 103, 166, 0.8);
+  padding: 40px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  color: #fafafa;
+  font-family: Istok Web, serif;
+  font-size: 16px;
+  font-weight: 400;
+  justify-content: space-between;
+}
+.photo__wrapper .photo .information .information__inner .name {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+.photo__wrapper .photo .information .information__inner div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.photo__wrapper .photo .information .information__inner div .likes__wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+.photo__wrapper .photo .information .information__inner div .likes__wrapper button {
+  height: 35px;
+  background: none;
+  border: none;
+}
+.photo__wrapper .photo .information .information__inner div .likes__wrapper img {
+  height: 30px;
+  cursor: pointer;
+}
+.photo__wrapper .photo .information .information__inner div .likes__wrapper .likes {
+  font-size: 23px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+.photo__wrapper .photo .information .information__inner div .owner {
+  font-size: 20px;
+  font-weight: 400;
+}
+.photo__wrapper .photo .information .information__inner .description {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 20px;
+  text-align: justify;
+}
+.photo__wrapper .photo .information .information__inner .price {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 20px;
+}
+.photo__wrapper .photo .information .buy {
+  background: rgba(0, 204, 118, 0.63);
+  border-radius: 59px;
+  border: none;
+  font-family: Istok Web, serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #fafafa;
+  padding: 12px 55px;
+  cursor: pointer;
+}
+.photo__wrapper .photo .exit {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  top: 15px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+}
+.photo__wrapper .photo .exit:before, .photo__wrapper .photo .exit:after {
+  content: "";
+  width: 141.42%;
+  height: 2px;
+  background: #fafafa;
+  position: absolute;
+  top: 49.5%;
+  left: 49.5%;
+}
+.photo__wrapper .photo .exit:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.photo__wrapper .photo .exit:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/*# sourceMappingURL=Photo.module.css.map */
