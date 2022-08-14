@@ -22,12 +22,10 @@ function App(props) {
                 <Route path={"/search"} element={<Search state={props.state.SearchPage}/>}/>
                 <Route path={"/rating"} element={<Rating state={props.state.RatingPage}/>}/>
                 <Route path={"/auction"} element={<Auction/>}/>
-                <Route path={"/account"} element={<Lk state={props.state.LkPage}
-                                                      changedName={props.changedName}
-                                                      updateName={props.updateName}
-                                                      changedSurname={props.changedSurname}
-                                                      updateSurname={props.updateSurname}/>}/>
+                <Route path={"/account"} element={<Lk state={props.state.LkPage} dispatch={props.dispatch}/>}/>
             </Routes>
+
+            {/*<Photo state={props.state.PhotoPage} dispatch={props.dispatch}/>*/}
         </div>
     );
 }

@@ -27,21 +27,26 @@ const Lk = (props) => {
 
     let newName = React.createRef();
     let changedName = () => {
-        props.changedName();
+        let action = {type: 'CHANGED-NAME'};
+        props.dispatch(action);
+
     }
     let onNameChange = () => {
         let text = newName.current.value;
-        props.updateName(text);
+        let action = {type: 'UPDATE-NAME', newName: text};
+        props.dispatch(action)
     }
 
 
     let newSurname = React.createRef();
     let changedSurname = () => {
-        props.changedSurname();
+        let action = {type: 'CHANGED-SURNAME'};
+        props.dispatch(action);
     }
     let onSurnameChange = () => {
         let text = newSurname.current.value;
-        props.updateSurname(text);
+        let action = {type: 'UPDATE-SURNAME', newSurname: text};
+        props.dispatch(action)
     }
 
     return (
@@ -62,7 +67,10 @@ const Lk = (props) => {
                             <input type={"text"} placeholder={props.state.email}/>
                             <input type={"text"} placeholder={props.state.password}/>
                         </div>
-                        <button type={"button"} onClick={() => {changedName(); changedSurname()}} className={style.save}>
+                        <button type={"button"} onClick={() => {
+                            changedName();
+                            changedSurname()
+                        }} className={style.save}>
                             <div>
                                 <span>с</span>
                                 <span>о</span>

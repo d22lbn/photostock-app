@@ -3,6 +3,11 @@ import style from "./Photo.module.css"
 import {NavLink} from "react-router-dom";
 
 const Photo = (props) => {
+    let putLike = () => {
+        let action = {type: 'PUT-LIKE'};
+        props.dispatch(action);
+    }
+
     return (
         <div className={style.photo__wrapper}>
             <div className={style.photo}>
@@ -15,7 +20,7 @@ const Photo = (props) => {
                         <h2 className={style.name}>{props.state.name}</h2>
                         <div>
                             <div className={style.likes__wrapper}>
-                                <button onClick={props.putLike}>
+                                <button onClick={putLike}>
                                     <img src={props.state.likeIconActive} alt={""}/>
                                 </button>
                                 <span className={style.likes}>{props.state.likes}</span>
