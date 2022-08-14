@@ -1,9 +1,16 @@
 import React from "react";
 import style from "./Lk.module.css"
-import Block from "../../blocks/Block";
 import {NavLink} from "react-router-dom";
 import Header from "../../header/Header";
 import Footer from "../../footer/Footer";
+import {
+    changeAgeActionCreator, changeEmailActionCreator,
+    changeNameActionCreator, changePasswordActionCreator,
+    changeSurnameActionCreator,
+    updateAgeActionCreator, updateEmailActionCreator,
+    updateNameActionCreator, updatePasswordActionCreator,
+    updateSurnameActionCreator
+} from "../../../redux/state";
 
 const Lk = (props) => {
     let prizes = props.state.prizes.map((prize) =>
@@ -25,28 +32,44 @@ const Lk = (props) => {
     )
 
 
-    let newName = React.createRef();
     let changedName = () => {
-        let action = {type: 'CHANGED-NAME'};
-        props.dispatch(action);
-
+        props.dispatch(changeNameActionCreator());
     }
-    let onNameChange = () => {
-        let text = newName.current.value;
-        let action = {type: 'UPDATE-NAME', newName: text};
-        props.dispatch(action)
+    let onNameChange = (e) => {
+        let text = e.target.value;
+        props.dispatch(updateNameActionCreator(text));
     }
 
-
-    let newSurname = React.createRef();
     let changedSurname = () => {
-        let action = {type: 'CHANGED-SURNAME'};
-        props.dispatch(action);
+        props.dispatch(changeSurnameActionCreator());
     }
-    let onSurnameChange = () => {
-        let text = newSurname.current.value;
-        let action = {type: 'UPDATE-SURNAME', newSurname: text};
-        props.dispatch(action)
+    let onSurnameChange = (e) => {
+        let text = e.target.value;
+        props.dispatch(updateSurnameActionCreator(text));
+    }
+
+    let changedAge = () => {
+        props.dispatch(changeAgeActionCreator());
+    }
+    let onAgeChange = (e) => {
+        let text = e.target.value;
+        props.dispatch(updateAgeActionCreator(text));
+    }
+
+    let changedEmail = () => {
+        props.dispatch(changeEmailActionCreator());
+    }
+    let onEmailChange = (e) => {
+        let text = e.target.value;
+        props.dispatch(updateEmailActionCreator(text));
+    }
+
+    let changedPassword = () => {
+        props.dispatch(changePasswordActionCreator());
+    }
+    let onPasswordChange = (e) => {
+        let text = e.target.value;
+        props.dispatch(updatePasswordActionCreator(text));
     }
 
     return (
@@ -60,16 +83,22 @@ const Lk = (props) => {
                     <form className={style.information}>
                         <div className={style.information__inputs}>
                             <input type={"text"} placeholder={props.state.name} value={props.state.newName}
-                                   onChange={onNameChange} ref={newName}/>
+                                   onChange={onNameChange}/>
                             <input type={"text"} placeholder={props.state.surname} value={props.state.newSurname}
-                                   onChange={onSurnameChange} ref={newSurname}/>
-                            <input type={"text"} placeholder={props.state.age + " года"}/>
-                            <input type={"text"} placeholder={props.state.email}/>
-                            <input type={"text"} placeholder={props.state.password}/>
+                                   onChange={onSurnameChange}/>
+                            <input type={"text"} placeholder={props.state.age + " года"} value={props.state.newAge}
+                                   onChange={onAgeChange}/>
+                            <input type={"text"} placeholder={props.state.email} value={props.state.newEmail}
+                                   onChange={onEmailChange}/>
+                            <input type={"text"} placeholder={props.state.password} value={props.state.newPassword}
+                                   onChange={onPasswordChange}/>
                         </div>
                         <button type={"button"} onClick={() => {
                             changedName();
-                            changedSurname()
+                            changedSurname();
+                            changedAge();
+                            changedEmail();
+                            changedPassword();
                         }} className={style.save}>
                             <div>
                                 <span>с</span>

@@ -17,7 +17,25 @@ import prize3 from "./res/lkPage/3.png"
 
 import like from "./res/photoPage/like.png"
 import likeActive from "./res/photoPage/likeActive.png"
+import lkReducer from "./lk-reducer";
+import photoReducer from "./photo-reducer";
 
+const CHANGED_NAME = 'CHANGED-NAME';
+const UPDATE_NAME = 'UPDATE-NAME'
+
+const CHANGED_SURNAME = 'CHANGED-SURNAME'
+const UPDATE_SURNAME = 'UPDATE-SURNAME'
+
+const CHANGED_AGE = 'CHANGED-AGE'
+const UPDATE_AGE = 'UPDATE-AGE'
+
+const CHANGED_EMAIL = 'CHANGED-EMAIL'
+const UPDATE_EMAIL = 'UPDATE-EMAIL'
+
+const CHANGED_PASSWORD = 'CHANGED-PASSWORD'
+const UPDATE_PASSWORD = 'UPDATE-PASSWORD'
+
+const PUT_LIKE = 'PUT-LIKE'
 
 let getPhotos = (photoNumber) => {
     let photos = []
@@ -138,6 +156,9 @@ let store = {
 
             newName: "",
             newSurname: "",
+            newAge: "",
+            newEmail: "",
+            newPassword: "",
         },
 
         PhotoPage: {
@@ -149,7 +170,8 @@ let store = {
             owner: "Борис",
             price: 12000
         }
-    }, _callSubscriber() {
+    },
+    _callSubscriber() {
     },
 
     getState() {
@@ -160,45 +182,28 @@ let store = {
     },
 
     dispatch(action) {
-        switch (action.type) {
-            case 'CHANGED-NAME':
-                let newName = this._state.LkPage.newName;
-                if (newName.length > 0) {
-                    this._state.LkPage.name = newName;
-                    this._state.LkPage.newName = '';
-                }
-                this._callSubscriber(this._state);
-                break;
-            case 'UPDATE-NAME':
-                this._state.LkPage.newName = action.newName;
-                this._callSubscriber(this._state);
-                break;
-            case 'CHANGED-SURNAME':
-                let newSurname = this._state.LkPage.newSurname;
-                if (newSurname.length > 0) {
-                    this._state.LkPage.surname = newSurname;
-                    this._state.LkPage.newSurname = '';
-                }
-                this._callSubscriber(this._state);
-                break;
-            case 'UPDATE-SURNAME':
-                this._state.LkPage.newSurname = action.newSurname;
-                this._callSubscriber(this._state);
-                break;
-            case 'PUT-LIKE':
-                if (this._state.PhotoPage.likeIconActive === like) {
-                    this._state.PhotoPage.likeIconActive = likeActive;
-                    this._state.PhotoPage.likes++;
-                } else {
-                    this._state.PhotoPage.likeIconActive = like;
-                    this._state.PhotoPage.likes--;
-                }
-                this._callSubscriber(this._state);
-                break;
-            default:
-        }
+        this._state.LkPage = lkReducer(this._state.LkPage, action);
+        this._state.PhotoPage = photoReducer(this._state.PhotoPage, action);
+        this._callSubscriber(this._state);
     }
 }
+
+export const changeNameActionCreator = () => ({type: CHANGED_NAME})
+export const updateNameActionCreator = (text) => ({type: UPDATE_NAME, newName: text})
+
+export const changeSurnameActionCreator = () => ({type: CHANGED_SURNAME})
+export const updateSurnameActionCreator = (text) => ({type: UPDATE_SURNAME, newSurname: text})
+
+export const changeAgeActionCreator = () => ({type: CHANGED_AGE})
+export const updateAgeActionCreator = (text) => ({type: UPDATE_AGE, newAge: text})
+
+export const changeEmailActionCreator = () => ({type: CHANGED_EMAIL})
+export const updateEmailActionCreator = (text) => ({type: UPDATE_EMAIL, newEmail: text})
+
+export const changePasswordActionCreator = () => ({type: CHANGED_PASSWORD})
+export const updatePasswordActionCreator = (text) => ({type: UPDATE_PASSWORD, newPassword: text})
+
+export const putLikeActionCreator = () => ({type: PUT_LIKE})
 
 export default store;
 window.store = store;

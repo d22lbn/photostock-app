@@ -1,11 +1,11 @@
 import React from "react";
 import style from "./Photo.module.css"
 import {NavLink} from "react-router-dom";
+import {putLikeActionCreator} from "../../redux/state";
 
 const Photo = (props) => {
     let putLike = () => {
-        let action = {type: 'PUT-LIKE'};
-        props.dispatch(action);
+        props.dispatch(putLikeActionCreator());
     }
 
     return (
