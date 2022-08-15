@@ -1,3 +1,9 @@
+import ava from "./res/lkPage/ava.jpg";
+import prize1 from "./res/lkPage/1.png";
+import prize2 from "./res/lkPage/2.png";
+import prize3 from "./res/lkPage/3.png";
+import seaPhoto from "./res/searchPage/sea.jpg";
+
 const CHANGED_NAME = 'CHANGED-NAME';
 const UPDATE_NAME = 'UPDATE-NAME'
 
@@ -13,7 +19,40 @@ const UPDATE_EMAIL = 'UPDATE-EMAIL'
 const CHANGED_PASSWORD = 'CHANGED-PASSWORD'
 const UPDATE_PASSWORD = 'UPDATE-PASSWORD'
 
-const lkReducer = (state, action) => {
+let initialState = {
+    ava: ava,
+    name: "Артурианец",
+    surname: "Кузнецов",
+    age: 23,
+    email: "max555@gmail.com",
+    password: "Новый пароль",
+    balance: 64953,
+    prizes: [prize1, prize2, prize3, prize1],
+    published: [
+        {id: 0, name: "море", img: seaPhoto},
+        {id: 1, name: "море", img: seaPhoto},
+        {id: 2, name: "море", img: seaPhoto},
+        {id: 3, name: "море", img: seaPhoto},
+        {id: 4, name: "море", img: seaPhoto},
+        {id: 5, name: "море", img: seaPhoto},
+    ],
+    purchased: [
+        {id: 0, name: "море", img: seaPhoto},
+        {id: 1, name: "море", img: seaPhoto},
+        {id: 2, name: "море", img: seaPhoto},
+        {id: 3, name: "море", img: seaPhoto},
+        {id: 4, name: "море", img: seaPhoto},
+        {id: 5, name: "море", img: seaPhoto},
+    ],
+
+    newName: "",
+    newSurname: "",
+    newAge: "",
+    newEmail: "",
+    newPassword: "",
+};
+
+const lkReducer = (state = initialState, action) => {
     switch (action.type) {
         case CHANGED_NAME:
             let newName = state.newName;

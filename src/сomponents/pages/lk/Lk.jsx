@@ -13,6 +13,9 @@ import {
 } from "../../../redux/lk-reducer";
 
 const Lk = (props) => {
+console.log("AAA")
+    console.log(props)
+
     let prizes = props.state.prizes.map((prize) =>
         <div className={style.prize}>
             <img src={prize} alt={""}/>

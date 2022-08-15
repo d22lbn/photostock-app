@@ -11,7 +11,7 @@ import Popular from "./сomponents/pages/popular/Popular";
 import Rating from "./сomponents/pages/rating/Rating";
 import Lk from "./сomponents/pages/lk/Lk";
 import Photo from "./сomponents/photo/Photo";
-import {putLike} from "./redux/state";
+import {putLike} from "./redux/store";
 
 function App(props) {
     return (
