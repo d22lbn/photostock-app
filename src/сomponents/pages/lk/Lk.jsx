@@ -72,6 +72,20 @@ const Lk = (props) => {
         props.dispatch(updatePasswordActionCreator(text));
     }
 
+
+    let balance = (number) => {
+        number = String(number)
+        number = number.split("").reverse().join("");
+        let balance = '';
+        for (let i = 0; i < number.length; i++) {
+            if (i % 3 === 0 && i > 0) {
+                balance += ' ';
+            }
+            balance += number[i];
+        }
+        return balance.split("").reverse().join("");
+    }
+
     return (
         <div>
             <Header/>
@@ -116,7 +130,7 @@ const Lk = (props) => {
                     <div className={style.prizes}>
                         {prizes}
                     </div>
-                    <span className={style.balance}>{props.state.balance} руб.</span>
+                    <span className={style.balance}>{balance(props.state.balance)} ₽</span>
                 </div>
                 <div className={style.account__photos}>
                     <div className={style.account__photos__title}>

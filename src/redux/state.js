@@ -132,7 +132,7 @@ let store = {
             age: 23,
             email: "max555@gmail.com",
             password: "Новый пароль",
-            balance: "2 000 000",
+            balance: 64953,
             prizes: [prize1, prize2, prize3, prize1],
             published: getPhotos(7),
             purchased: getPhotos(8),
